@@ -11,7 +11,8 @@ module.exports = class CustomTransport extends Transport {
 
     initialize() {
         try {
-            fs.writeFileSync(this.filename, [], 'utf8');
+            fs.writeFileSync(this.filename, [].toString(), 'utf8');
+
         } catch (error) {
             console.log(error);
         }

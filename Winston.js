@@ -22,7 +22,9 @@ const logConfiguration = winston.createLogger({
     format: winston.format.json(),
     transports: [
         new CustomTransport({
-            filename: moment(moment.now()).format('DD-MM-YYYY') + '-logs.json',
+            // filename: moment(moment.now()).format('DD-MM-YYYY') + '-logs.json',
+            filename: 'logs.json',
+
             handleExceptions: true
         })
     ],
