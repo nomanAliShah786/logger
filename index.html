@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Logger</title>
+</head>
+
+<body>
+    <style>
+        .outer-container {
+            height: 80vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            margin-top: 2em;
+            margin-bottom: 2em;
+        }
+
+        .card-title {
+            display: flex;
+            justify-content: center;
+        }
+
+        .button-time-container {
+            margin-right: 5em;
+            width: 15em;
+        }
+
+        input {
+            margin: 10px;
+            position: relative;
+            width: 250px;
+            color: black;
+        }
+
+        input:before {
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            content: attr(my-date);
+            display: inline-block;
+            color: black;
+        }
+        
+    </style>
+    <div class="container outer-container">
+        <div class="button-time-container">
+            <div class="datetime">
+                <input type="datetime-local" name="InitialDate" id="InitialDate">
+                <input type="datetime-local" name="FinalDate" id="FinalDate">
+            </div>
+            <div class="dropdown" style="margin-left:10px;">
+                <select class="custom-select btn btn-primary">
+                    <option value="1" selected>All logs</option>
+                    <option value="2">Info Logs</option>
+                    <option value="3">Error Logs</option>
+                  </select>
+            </div>
+        </div>
+        <div class="card" style="width: 60rem;">
+            <div class="card-body">
+                <h5 class="card-title">Logs</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Info amd Error Logs</h6>
+                <hr>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

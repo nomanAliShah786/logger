@@ -1,0 +1,54 @@
+{
+  "name": "mrbot",
+  "version": "0.0.1",
+  "description": "mrBot",
+  "keywords": [
+    "loopback-application",
+    "loopback"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "engines": {
+    "node": "12 || 14 || 16 || 17"
+  },
+  "scripts": {
+    "build": "lb-tsc",
+    "build:watch": "lb-tsc --watch",
+    "start": "node app.js",
+    "deploy": "serverless deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Pablo",
+  "license": "",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.95.0",
+    "@aws-sdk/s3-request-presigner": "^3.95.0",
+    "aws-sdk": "^2.1112.0",
+    "aws-serverless-express": "^3.4.0",
+    "axios": "^0.26.1",
+    "cross-fetch": "^3.1.5",
+    "express": "^4.18.2",
+    "graphql": "^15.8.0",
+    "graphql-tag": "^2.12.6",
+    "jsdom": "^20.0.1",
+    "moment": "^2.29.4",
+    "newrelic": "^9.0.3",
+    "node-fetch": "^2.6.7",
+    "nodemon": "^2.0.15",
+    "pm2": "^5.2.2",
+    "puppeteer": "^13.5.2",
+    "puppeteer-recorder": "^1.0.7",
+    "puppeteer-screen-recorder": "^2.0.2",
+    "puppeteer-video-recorder": "^1.0.5",
+    "sqs-consumer": "^5.6.0",
+    "tslib": "^2.0.0",
+    "uuidv4": "^6.2.13",
+    "winston": "^3.8.2"
+  },
+  "devDependencies": {
+    "serverless": "^3.23.0"
+  }
+}
