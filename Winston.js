@@ -1,8 +1,8 @@
 'use strict';
 
 const {format}=require('winston')
-const winston = require('winston');
-const CustomTransport = require('./CustomTransport');
+const winston = require('winston'); require('winston-daily-rotate-file');
+const CustomTransport = require('./customTransport');
 const moment = require('moment');
 
 // const logConfiguration = {
@@ -24,9 +24,21 @@ const logConfiguration = winston.createLogger({
         new CustomTransport({
             // filename: moment(moment.now()).format('DD-MM-YYYY') + '-logs.json',
             filename: 'logs.json',
+            format:format.combine(format.timestamp(),format.json()),
 
             handleExceptions: true
-        })
+        }),
+        new (winston.transports.DailyRotateFile)({
+            filename: 'logsarchive.json',
+            datePattern: 'yyyy-MM-dd.',
+            prepend: true,
+            maxSize:'500m',
+            zippedArchive:true,
+            maxfile: '3d', 
+            format:format.combine(format.timestamp(),format.json()),
+
+
+          }),
     ],
 });
 
